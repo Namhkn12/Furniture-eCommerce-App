@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ProductService
+  datasource:
+    url: jdbc:mysql://localhost:3336/furniture_app
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8100
+
