@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide;
 
 import api.user.UserApiClient;
 import api.user.UserApiService;
-import model.User;
+import model.user.UserInfo;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,7 +27,7 @@ public class UserDemoActivity extends AppCompatActivity {
 
     //Retrofit
     private UserApiService userApiService = UserApiClient.getRetrofit().create(UserApiService.class);
-    private Call<User> call = userApiService.getUser(1); //get user with id = 1
+    private Call<UserInfo> call = userApiService.getUser(1); //get user with id = 1
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,16 +43,16 @@ public class UserDemoActivity extends AppCompatActivity {
                 return;
             }
 
-            call.enqueue(new Callback<User>() {
+            call.enqueue(new Callback<UserInfo>() {
                 @Override
-                public void onResponse(Call<User> call, Response<User> response) {
+                public void onResponse(Call<UserInfo> call, Response<UserInfo> response) {
                     if (response.isSuccessful()) {
-                        User user = response.body();
+                        UserInfo user = response.body();
                         Log.d("GET_USER", "User with id: " + user.getId() + " has displayName: " + user.getDisplayName());
 
                         textUserId.setText(String.valueOf(user.getId()));
                         textUsername.setText(String.valueOf(user.getDisplayName()));
-                        textUserAddress.setText(String.valueOf(user.getAddress()));
+//                        textUserAddress.setText(String.valueOf(user.getAddress()));
                         textUserPhoneNum.setText(String.valueOf(user.getPhoneNumber()));
                     } else {
                         Log.e("GET_USER", "Server error: " + response.code());
@@ -60,7 +60,7 @@ public class UserDemoActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(Call<User> call, Throwable throwable) {
+                public void onFailure(Call<UserInfo> call, Throwable throwable) {
                     Log.e("GET_USER", "Network error: " + throwable.getMessage());
                 }
             });

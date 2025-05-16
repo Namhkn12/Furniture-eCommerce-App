@@ -1,0 +1,4 @@
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#121212"> <!-- Ripple color -->
+    <item android:drawable="@drawable/bg_logout_button" />
+</ripple>

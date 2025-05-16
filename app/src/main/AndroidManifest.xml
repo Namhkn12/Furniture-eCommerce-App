@@ -5,10 +5,11 @@
     <queries>
         <package android:name="com.google.android.gms" />
     </queries>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -17,9 +18,52 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FurnitureECommerce"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ui.login.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.setting.ChangeEmailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.setting.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.EmailVerificationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FurnitureECommerce" />
+        <activity
+            android:name=".ui.setting.AddAddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.FirstTimeLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.RegisterActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBrS_atLs6i1IkmOk-Y-tXqgka9tK9mg1Y" />
+
+        <activity
+            android:name=".ui.setting.EditAddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.setting.AccountAddressSettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.setting.AccountSecuritySettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.UserDashboardActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
