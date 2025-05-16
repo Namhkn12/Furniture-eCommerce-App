@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">Furniture eCommerce</string>
+
+    <!--    User Dashboard-->
+    <string name="user_dashboard_mainTitle">Thông tin người dùng</string>
+    <string name="user_dashboard_orderTitle">Đơn hàng</string>
+    <string name="user_dashboard_pendingOrder">Đơn chờ xác nhận</string>
+    <string name="user_dashboard_onRouteOrder">Đơn đang giao hàng</string>
+    <string name="user_dashboard_historyOrder">Lịch sử đặt hàng</string>
+    <string name="user_dashboard_accountInfoTitle">Tài khoản</string>
+    <string name="user_dashboard_accountSecurityInfo"><![CDATA[Tài khoản & Bảo mật]]></string>
+    <string name="user_dashboard_addressInfo">Địa chỉ</string>
+    <string name="user_dashboard_settingTitle">Cài đặt</string>
+    <string name="user_dashboard_languageSetting">Ngôn ngữ</string>
+    <string name="user_dashboard_notificationSetting">Thông báo</string>
+    <string name="user_dashboard_logoutButton">Đăng xuất</string>
+    <string name="user_dashboard_loginButton">Đăng nhập</string>
+    <!--    Login-->
+    <string name="login_title">Đăng nhập</string>
+    <string name="login_usernameHint">Tài khoản</string>
+    <string name="login_passwordHint">Mật khẩu</string>
+    <string name="login_button">Đăng nhập</string>
+    <string name="login_noAccount">Chưa có tài khoản?</string>
+    <string name="login_register">Đăng kí</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
 </resources>

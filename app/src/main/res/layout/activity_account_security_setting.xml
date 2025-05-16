@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/warm_white">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_long_forward"
+        android:scaleX="-1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tài khoản và bảo mật"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingVertical="8dp" />
+
+    <include
+        layout="@layout/common_big_separator_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sửa thông tin tài khoản"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:padding="5dp" />
+
+        <include
+            layout="@layout/common_small_separator_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="2dp" />
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tên người dùng"
+            android:drawablePadding="8dp"
+            android:paddingVertical="2dp"
+            app:drawableEndCompat="@drawable/ic_arrow_forward_24"
+            android:background="?attr/selectableItemBackground"/>
+
+        <include
+            layout="@layout/common_small_separator_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="2dp" />
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Giới tính"
+            android:drawablePadding="8dp"
+            android:paddingVertical="2dp"
+            app:drawableEndCompat="@drawable/ic_arrow_forward_24"
+            android:background="?attr/selectableItemBackground"/>
+        <include
+            layout="@layout/common_small_separator_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="2dp"
+            />
+        <TextView
+            android:id="@+id/dateOfBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ngày sinh"
+            android:drawableEnd="@drawable/ic_arrow_forward_24"
+            android:drawablePadding="8dp"
+            android:paddingVertical="2dp"
+            android:background="?attr/selectableItemBackground"/>
+        <include
+            layout="@layout/common_small_separator_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="2dp"
+            />
+        <TextView
+            android:id="@+id/phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Số điện thoại"
+            android:drawablePadding="8dp"
+            android:paddingVertical="2dp"
+            app:drawableEndCompat="@drawable/ic_arrow_forward_24"
+            android:background="?attr/selectableItemBackground"/>
+        <include
+            layout="@layout/common_small_separator_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="2dp"
+            />
+        <TextView
+            android:id="@+id/security"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bảo mật"
+            android:textSize="15sp"
+            android:padding="5dp"
+            android:textStyle="bold"/>
+        <include
+            layout="@layout/common_small_separator_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="2dp"
+            />
+        <TextView
+            android:id="@+id/changePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đổi mật khẩu"
+            android:drawablePadding="8dp"
+            app:drawableEndCompat="@drawable/ic_arrow_forward_24"
+            android:background="?attr/selectableItemBackground"/>
+        <include
+            layout="@layout/common_small_separator_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="2dp"
+            />
+        <TextView
+            android:id="@+id/changeEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đổi email"
+            android:drawablePadding="8dp"
+            app:drawableEndCompat="@drawable/ic_arrow_forward_24"
+            android:background="?attr/selectableItemBackground"/>
+    </LinearLayout>
+</LinearLayout>

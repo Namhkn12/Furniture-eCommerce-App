@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warm_white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_long_forward"
+            android:scaleX="-1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thêm địa chỉ mới"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingVertical="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Họ và tên"
+            android:paddingStart="4dp"/>
+        <EditText
+            android:id="@+id/editName"
+            android:hint="Tên người nhận"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số điện thoại"
+            android:paddingStart="4dp"/>
+        <EditText
+            android:id="@+id/editPhone"
+            android:hint="Số điện thoại"
+            android:inputType="phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên đường/Tòa nhà/Số nhà"
+            android:paddingStart="4dp"/>
+        <EditText
+            android:id="@+id/editRoad"
+            android:hint="Tên đường/Tòa nhà/Số nhà"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phường/Xã, Quận/Huyện, Tỉnh/Thành phố"
+            android:paddingStart="4dp"/>
+        <EditText
+            android:id="@+id/editCity"
+            android:hint="Phường/Xã, Quận/Huyện, Tỉnh/Thành phố"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tvWarningNoField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vui lòng nhập đầy đủ thông tin!"
+            android:textColor="@color/red"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingVertical="8dp"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCancel"
+                android:text="Huỷ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_logout_button_ripple"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSave"
+                android:text="Lưu"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/bg_login_button_ripple"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
