@@ -22,6 +22,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.ndroid.ecommerce.R;
 import com.ndroid.ecommerce.databinding.ActivityUserDashboardBinding;
 import com.ndroid.ecommerce.ui.login.LoginActivity;
@@ -94,11 +95,13 @@ public class UserDashboardActivity extends AppCompatActivity {
     private void initUserInfo(Serializable serializable) {
         userInfo = (UserInfo) serializable;
         binding.userNameTv.setText(userInfo.getDisplayName());
-        Glide.with(this).load(UserApiClient.USER_ENDPOINT_URL + "image/users/" + userInfo.getId()).into(binding.userDashboardImage);
+        Glide.with(this).load(UserApiClient.USER_ENDPOINT_URL + "image/users/" + userInfo.getId()).diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true).into(binding.userDashboardImage);
     }
 
     private void reloadUserInfo() {
-        Glide.with(UserDashboardActivity.this).load(UserApiClient.USER_ENDPOINT_URL + "image/users/" + userInfo.getId()).into(binding.userDashboardImage);
+        Glide.with(UserDashboardActivity.this).load(UserApiClient.USER_ENDPOINT_URL + "image/users/" + userInfo.getId()).diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true).into(binding.userDashboardImage);
         Call<UserInfo> call = userApiService.getUser(userInfo.getId());
         call.enqueue(new Callback<UserInfo>() {
             @Override
