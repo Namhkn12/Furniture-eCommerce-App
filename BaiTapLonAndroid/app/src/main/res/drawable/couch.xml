@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Couch base -->
+    <path
+        android:fillColor="#A67C52"
+        android:pathData="M2,16v2c0,1.1 0.9,2 2,2h16c1.1,0 2,-0.9 2,-2v-2c0,-1.1 -0.9,-2 -2,-2H4C2.9,14 2,14.9 2,16z" />
+
+    <!-- Couch back -->
+    <path
+        android:fillColor="#8D6E63"
+        android:pathData="M4,14v-3c0,-1.1 0.9,-2 2,-2h12c1.1,0 2,0.9 2,2v3" />
+
+    <!-- Left arm -->
+    <path
+        android:fillColor="#795548"
+        android:pathData="M4,14v-5c0,-1.1 0.9,-2 2,-2h0c1.1,0 2,0.9 2,2v5" />
+
+    <!-- Right arm -->
+    <path
+        android:fillColor="#795548"
+        android:pathData="M20,14v-5c0,-1.1 -0.9,-2 -2,-2h0c-1.1,0 -2,0.9 -2,2v5" />
+
+    <!-- Couch legs -->
+    <path
+        android:fillColor="#5D4037"
+        android:pathData="M5,20L5,22" />
+    <path
+        android:fillColor="#5D4037"
+        android:pathData="M19,20L19,22" />
+
+    <!-- Cushion details -->
+    <path
+        android:fillColor="#BCAAA4"
+        android:pathData="M7,12h10v2h-10z" />
+</vector>
