@@ -110,8 +110,83 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/comment_section"
         app:layout_constraintTop_toBottomOf="@id/filter_tabs" />
+
+    <!-- Comment Section -->
+    <LinearLayout
+        android:id="@+id/comment_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#F5F5F5"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <RatingBar
+                android:id="@+id/rating_bar_new_comment"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="5"
+                android:progressTint="#FFC107" />
+
+            <TextView
+                android:id="@+id/tv_rating_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Your rating"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edit_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:hint="Write your comment..."
+            android:minHeight="80dp"
+            android:padding="8dp"
+            android:gravity="top|start"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/btn_add_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Photo"
+                android:textSize="12sp"
+                android:backgroundTint="#9E9E9E" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_submit_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:textSize="12sp"
+                android:backgroundTint="#FF9800" />
+        </LinearLayout>
+    </LinearLayout>
 
     <!-- Bottom Navigation Bar -->
     <View
@@ -120,9 +195,139 @@
         android:layout_height="4dp"
         android:background="@android:color/black"
         android:layout_marginBottom="16dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintWidth_percent="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@android:color/white">-->
+
+<!--    &lt;!&ndash; Header Section &ndash;&gt;-->
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/header_layout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="16dp"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_review_title"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Review"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="24sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/rating_layout"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/tv_review_title">-->
+
+<!--            <RatingBar-->
+<!--                android:id="@+id/rating_bar"-->
+<!--                style="?android:attr/ratingBarStyleSmall"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:isIndicator="true"-->
+<!--                android:numStars="5"-->
+<!--                android:rating="4.6"-->
+<!--                android:progressTint="#FFC107" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_rating_value"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:text="4.6/5"-->
+<!--                android:textColor="@android:color/black" />-->
+<!--        </LinearLayout>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/btn_leave_review"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Leave a review!"-->
+<!--            android:textColor="#3F51B5"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    &lt;!&ndash; Filter Tabs &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/filter_tabs"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:paddingHorizontal="16dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/header_layout">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tab_all_reviews"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/tab_selected_background"-->
+<!--            android:paddingHorizontal="16dp"-->
+<!--            android:paddingVertical="8dp"-->
+<!--            android:text="All Reviews"-->
+<!--            android:textColor="#FF9800" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tab_has_picture"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:background="@drawable/tab_unselected_background"-->
+<!--            android:paddingHorizontal="16dp"-->
+<!--            android:paddingVertical="8dp"-->
+<!--            android:text="Has Picture"-->
+<!--            android:textColor="#9E9E9E" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tab_by_rating"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:background="@drawable/tab_unselected_background"-->
+<!--            android:paddingHorizontal="16dp"-->
+<!--            android:paddingVertical="8dp"-->
+<!--            android:text="By Rating"-->
+<!--            android:textColor="#9E9E9E" />-->
+<!--    </LinearLayout>-->
+
+<!--    &lt;!&ndash; Reviews RecyclerView &ndash;&gt;-->
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recycler_reviews"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/filter_tabs" />-->
+
+<!--    &lt;!&ndash; Bottom Navigation Bar &ndash;&gt;-->
+<!--    <View-->
+<!--        android:id="@+id/bottom_nav"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="4dp"-->
+<!--        android:background="@android:color/black"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintWidth_percent="0.3"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
