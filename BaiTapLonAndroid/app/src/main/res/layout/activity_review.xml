@@ -103,7 +103,15 @@
             android:text="By Rating"
             android:textColor="#9E9E9E" />
     </LinearLayout>
-
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filter_tabs" />
     <!-- Reviews RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_reviews"

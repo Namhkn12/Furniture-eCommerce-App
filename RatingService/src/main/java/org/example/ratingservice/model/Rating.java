@@ -4,46 +4,39 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Rating {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private int productId; // liên kết với Product Service
-    private int userId; // liên kết với User Service
-    private int rating; // 1 - 5
-    private String content;
-    private Boolean hasPicture;
-    private String summary;
-    private LocalDateTime createdAt;
-
-    public Long getId() {
-        return id;
+    public int getImageResourceId() {
+        return imageResourceId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setImageResourceId(int imageResourceId) {
+        this.imageResourceId = imageResourceId;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
-    public String getSummary() {
-        return summary;
+    public String getDate() {
+        return date;
     }
 
-    public void setSummary(String summary) {
-        this.summary = summary;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getContent() {
@@ -54,12 +47,20 @@ public class Rating {
         this.content = content;
     }
 
-    public Boolean getHasPicture() {
-        return hasPicture;
+    public Boolean getHasImage() {
+        return hasImage;
     }
 
-    public void setHasPicture(Boolean hasPicture) {
-        this.hasPicture = hasPicture;
+    public void setHasImage(Boolean hasImage) {
+        this.hasImage = hasImage;
+    }
+
+    public String getRatingText() {
+        return ratingText;
+    }
+
+    public void setRatingText(String ratingText) {
+        this.ratingText = ratingText;
     }
 
     public int getUserId() {
@@ -70,12 +71,20 @@ public class Rating {
         this.userId = userId;
     }
 
-    public int getRating() {
+    public float getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(float rating) {
         this.rating = rating;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public int getProductId() {
@@ -85,5 +94,18 @@ public class Rating {
     public void setProductId(int productId) {
         this.productId = productId;
     }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private int productId; // liên kết với Product Service
+    private int userId; // liên kết với User Service
+    private float rating; // 1 - 5
+    private String ratingText;
+    private Boolean hasImage;
+    private String content;
+    private String date;
+    private int imageResourceId;
+    private String imageUrl;
     // constructors, getters, setters
 }

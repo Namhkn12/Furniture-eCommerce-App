@@ -8,6 +8,7 @@ public class ReviewModel {
     private String date;
     private boolean hasImage;
     private int imageResourceId;
+    private String imageUrl; // Add this field for loading images from URLs
 
     public ReviewModel() {
     }
@@ -66,5 +67,13 @@ public class ReviewModel {
 
     public void setImageResourceId(int imageResourceId) {
         this.imageResourceId = imageResourceId;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
