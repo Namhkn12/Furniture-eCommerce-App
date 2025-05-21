@@ -15,7 +15,6 @@ public interface ReviewApiService {
 //    @GET("reviews")
     @GET("/ratings")
     Call<List<ReviewModel>> getReviews(
-        @Query("userId") int userId,
         @Query("productId") int productId
     );
     @POST("/")

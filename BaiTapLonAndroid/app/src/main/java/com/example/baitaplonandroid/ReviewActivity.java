@@ -83,7 +83,7 @@ public class ReviewActivity extends AppCompatActivity {
         reviewApiService = retrofit.create(ReviewApiService.class);
         // Create sample data
         createSampleData();
-        getReviews(1,2);
+        getReviews(2);
         // Set up adapter with all reviews initially
         filteredReviewsList = new ArrayList<>(allReviewsList);
         float averageRating = getAverageRating(filteredReviewsList);
@@ -144,8 +144,8 @@ public class ReviewActivity extends AppCompatActivity {
         });
     }
 
-    private void getReviews(int userId, int productId) {
-        Call<List<ReviewModel>> call = reviewApiService.getReviews(userId, productId);
+    private void getReviews(int productId) {
+        Call<List<ReviewModel>> call = reviewApiService.getReviews(productId);
         call.enqueue(new Callback<List<ReviewModel>>() {
             @Override
             public void onResponse(Call<List<ReviewModel>> call, Response<List<ReviewModel>> response) {

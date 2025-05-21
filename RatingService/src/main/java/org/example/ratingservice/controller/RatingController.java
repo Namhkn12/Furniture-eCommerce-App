@@ -18,10 +18,9 @@ public class RatingController {
     @Autowired
     private RatingRepository ratingRepository;
     @GetMapping("/ratings")
-    public ResponseEntity<List<Rating>> getRatingsByUserAndProduct(
-            @RequestParam int userId,
+    public ResponseEntity<List<Rating>> getRatingsByProduct(
             @RequestParam int productId) {
-        List<Rating> ratings = ratingService.findByUserIdAndProductId(userId, productId);
+        List<Rating> ratings = ratingService.findByProductId(productId);
         return ResponseEntity.ok(ratings);
     }
     @PostMapping
@@ -29,6 +28,16 @@ public class RatingController {
         rating.setDate(LocalDate.now().toString()); // tự động gán ngày hiện tại nếu cần
         Rating savedRating = ratingRepository.save(rating);
         return ResponseEntity.ok(savedRating);
+    }
+    @GetMapping("/average/{productId}")
+    public ResponseEntity<Double> getAverageRating(@PathVariable int productId) {
+        Double average = ratingService.getAverageRatingByProductId(productId);
+        return ResponseEntity.ok(average);
+    }
+    @GetMapping("/count/{productId}")
+    public ResponseEntity<Long> getRatingCount(@PathVariable int productId) {
+        Long count = ratingService.getRatingCountByProductId(productId);
+        return ResponseEntity.ok(count);
     }
 }
 

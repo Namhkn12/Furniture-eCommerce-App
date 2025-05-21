@@ -9,11 +9,13 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface RatingRepository extends JpaRepository<Rating, Integer> {
-    List<Rating> findByUserIdAndProductId(int userId, int productId);
+    List<Rating> findByProductId(int productId);
+    @Query("SELECT AVG(r.rating) FROM Rating r WHERE r.productId = :productId")
+    Double findAverageRatingByProductId(@Param("productId") int productId);
+    @Query("SELECT COUNT(r) FROM Rating r WHERE r.productId = :productId")
+    Long countByProductId(@Param("productId") int productId);  // 👈 Thêm dòng này
 }
 
-//@Query("SELECT AVG(r.rating) FROM Rating r WHERE r.productId = :productId")
-//Double findAverageRatingByProductId(@Param("productId") int productId);
 //@Query("SELECT AVG(r.rating) FROM Rating r WHERE r.productId = :productId AND (:hasPicture IS NULL OR r.hasImage = :hasImage)")
 //Double findAverageRatingByProductId(@Param("productId") int productId, @Param("hasPicture") Boolean hasPicture);
 //@Query("SELECT COUNT(r) FROM Rating r WHERE r.productId = :productId AND (:hasPicture IS NULL OR r.hasImage = :hasImage)")

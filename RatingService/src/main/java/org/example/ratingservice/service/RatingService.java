@@ -21,8 +21,8 @@ public class RatingService {
 
     @Autowired
     private RestTemplate restTemplate;
-    public List<Rating> findByUserIdAndProductId(int userId, int productId) {
-        return ratingRepository.findByUserIdAndProductId(userId, productId);
+    public List<Rating> findByProductId(int productId) {
+        return ratingRepository.findByProductId(productId);
     }
     private ProductDTO getProductById(int productId) {
         return restTemplate.getForObject("http://localhost:8082/products/" + productId, ProductDTO.class);
@@ -31,6 +31,14 @@ public class RatingService {
     private UserDTO getUserById(int userId) {
         return restTemplate.getForObject("http://localhost:8081/users/" + userId, UserDTO.class);
     }
+    public Double getAverageRatingByProductId(int productId) {
+        Double average = ratingRepository.findAverageRatingByProductId(productId);
+        return average != null ? average : 0.0; // Trả về 0 nếu không có đánh giá
+    }
+    public Long getRatingCountByProductId(int productId) {
+        return ratingRepository.countByProductId(productId);
+    }
+
 }
 
 
