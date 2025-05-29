@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_long_forward"
+        android:scaleX="-1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="Tìm kiếm sản phẩm"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <!-- Search Input -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_search" />
+
+        <EditText
+            android:id="@+id/etSearchKeyword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@null"
+            android:hint="Bàn, ghế, giường, v.v..."
+            android:inputType="text"
+            android:padding="8dp"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Filter Categories Button -->
+    <Button
+        android:id="@+id/btnSelectCategories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lọc loại nội thất"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/black"/>
+
+    <!-- Display selected categories -->
+    <TextView
+        android:id="@+id/tvSelectedCategories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Loại nội thất đang tìm: (trống)"
+        android:paddingTop="8dp"
+        android:textColor="#555555" />
+
+    <!-- Search Button -->
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tìm kiếm"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/black"/>
+
+    <TextView
+        android:id="@+id/tvNoItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Không tìm được sản phẩm đúng yêu cầu của bạn :("
+        android:paddingTop="8dp"
+        android:textColor="#555555"
+        android:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recViewProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+

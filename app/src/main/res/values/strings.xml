@@ -22,10 +22,17 @@
     <string name="login_button">Đăng nhập</string>
     <string name="login_noAccount">Chưa có tài khoản?</string>
     <string name="login_register">Đăng kí</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <!--    Chat bot-->
+    <string name="hint_message">Nhập tin nhắn...</string>
+    <string name="send_message">Gửi</string>
+    <string name="chat_history">Lịch sử chat</string>
+    <string name="no_history">Không có lịch sử chat</string>
+    <string name="new_chat">Đoạn chat mới</string>
+    <string name="delete_chat">Xóa đoạn chat</string>
+    <string name="delete_chat_confirm">Bạn có chắc chắn muốn xóa đoạn chat này?</string>
+    <string name="delete">Xóa</string>
+    <string name="cancel">Hủy</string>
+    <string name="deleted">Đã xóa đoạn chat</string>
+
 
 </resources>

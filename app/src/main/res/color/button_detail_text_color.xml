@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true" android:state_pressed="true" android:color="#D2691E">
+    </item>
+    <item android:state_selected="true" android:color="#F28C38">
+         <!-- Orange when selected -->
+    </item>
+    <item android:state_pressed="true" android:color="#444444">
+         <!-- Darker gray when not selected but pressed -->
+    </item>
+    <item android:color="#666666">
+         <!-- Dark gray when not selected -->
+    </item>
+</selector>

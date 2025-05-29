@@ -1,5 +1,6 @@
 package com.ndroid.ecommerce.ui;
 
+import static android.content.Intent.FLAG_ACTIVITY_NO_ANIMATION;
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 import static android.widget.Toast.LENGTH_SHORT;
@@ -23,9 +24,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.ndroid.ecommerce.MyApplication;
 import com.ndroid.ecommerce.R;
 import com.ndroid.ecommerce.databinding.ActivityUserDashboardBinding;
+import com.ndroid.ecommerce.ui.chat.ChatActivity;
 import com.ndroid.ecommerce.ui.login.LoginActivity;
+import com.ndroid.ecommerce.ui.order.OrderActivity;
+import com.ndroid.ecommerce.ui.order.ShoppingCartActivity;
+import com.ndroid.ecommerce.ui.product.HomeActivity;
 import com.ndroid.ecommerce.ui.setting.AccountAddressSettingActivity;
 import com.ndroid.ecommerce.ui.setting.AccountSecuritySettingActivity;
 import com.ndroid.ecommerce.util.LoadingDialog;
@@ -65,16 +71,15 @@ public class UserDashboardActivity extends AppCompatActivity {
         binding = ActivityUserDashboardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Intent intent = getIntent();
-        Serializable serializable = intent.getSerializableExtra("user_info");
+        userInfo = ((MyApplication) getApplication()).getUserInfo();
 
-        if (serializable != null) {
+        if (userInfo != null) {
             // User logged in, hide login button
             binding.userDashboardLoginButton.setVisibility(INVISIBLE);
             binding.userDashboardLogoutButton.setVisibility(VISIBLE);
 
-            initUserInfo(serializable);
-            username = intent.getStringExtra("username");
+            initUserInfo(userInfo);
+            username = ((MyApplication) getApplication()).getUsername();
         } else {
             binding.userDashboardLoginButton.setVisibility(VISIBLE);
             binding.userDashboardLogoutButton.setVisibility(INVISIBLE);
@@ -84,12 +89,47 @@ public class UserDashboardActivity extends AppCompatActivity {
         binding.userDashboardAccountAndSecuritySettingText.setOnClickListener(l -> openAccountSettingActivity());
         binding.userDashboardAddressSettingText.setOnClickListener(l -> openAddressEditActivity());
         binding.userDashboardImage.setOnClickListener(l -> chooseImage());
+
+        binding.tvOrderHistory.setOnClickListener(l -> {
+            Intent intent = new Intent(UserDashboardActivity.this, OrderActivity.class);
+            startActivity(intent);
+        });
+
+        binding.bottomNavigation.setSelectedItemId(R.id.nav_profile);
+        binding.bottomNavigation.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.nav_home) {
+                Intent intent = new Intent(UserDashboardActivity.this, HomeActivity.class);
+                intent.setFlags(FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+            } else if (id == R.id.nav_chat) {
+                Intent intent1 = new Intent(UserDashboardActivity.this, ChatActivity.class);
+                intent1.setFlags(FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent1);
+            } else if (id == R.id.nav_shop) {
+                Intent intent2 = new Intent(UserDashboardActivity.this, ShoppingCartActivity.class);
+                intent2.setFlags(FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent2);
+            } else if (id == R.id.nav_profile) {
+
+            }
+            return true;
+        });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        overridePendingTransition(0, 0);
+        userInfo = ((MyApplication) getApplication()).getUserInfo();
         reloadUserInfo();
+        binding.bottomNavigation.setSelectedItemId(R.id.nav_profile);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        overridePendingTransition(0, 0);
     }
 
     private void initUserInfo(Serializable serializable) {
@@ -107,7 +147,9 @@ public class UserDashboardActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<UserInfo> call, Response<UserInfo> response) {
                 if (response.isSuccessful()) {
-                    userInfo = response.body();
+                    MyApplication myApplication = (MyApplication) getApplication();
+                    myApplication.setUserInfo(response.body());
+                    userInfo = myApplication.getUserInfo();
                     binding.userNameTv.setText(userInfo.getDisplayName());
                 }
             }

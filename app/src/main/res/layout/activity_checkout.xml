@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F8F9FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đặt hàng"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#1A1A1A"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hoàn thiện đơn đặt hàng của bạn"
+            android:textSize="16sp"
+            android:textColor="#6B7280"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Shipping Information Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="20dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thông tin giao hàng"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A1A"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Họ tên người nhận"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:background="@drawable/input_background"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/etCity"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Xã - Huyện/Phường - Tỉnh/Thành phố"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:background="@drawable/input_background"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/etRoad"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Ngõ - Số đường"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:background="@drawable/input_background"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/etPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Số điện thoại liên lạc"
+                android:inputType="number"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:background="@drawable/input_background"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvChooseAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            android:text="Hoặc bấm vào đây để chọn một địa chỉ có sẵn"
+            android:textColor="@color/blue"
+            android:textStyle="italic"
+            />
+
+        <!-- Payment Information Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="20dp"
+            android:layout_marginBottom="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phương thức thanh toán"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A1A"
+                android:layout_marginBottom="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/rgPaymentMethod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <RadioButton
+                    android:id="@+id/rbCreditCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Thẻ tín dụng"
+                    android:checked="true"
+                    android:textSize="16sp"
+                    android:padding="8dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbPayPal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PayPal"
+                    android:textSize="16sp"
+                    android:padding="8dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbCashOnDelivery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Trả khi nhận"
+                    android:textSize="16sp"
+                    android:padding="8dp"/>
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/creditCardLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/etCardNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Mã số thẻ"
+                    android:inputType="number"
+                    android:maxLength="16"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="@drawable/input_background"
+                    android:layout_marginBottom="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <EditText
+                        android:id="@+id/etExpiryDate"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:hint="MM/YY"
+                        android:inputType="date"
+                        android:maxLength="5"
+                        android:textSize="16sp"
+                        android:padding="12dp"
+                        android:background="@drawable/input_background"
+                        android:layout_marginEnd="6dp"/>
+
+                    <EditText
+                        android:id="@+id/etCVV"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:hint="CVV"
+                        android:inputType="numberPassword"
+                        android:maxLength="3"
+                        android:textSize="16sp"
+                        android:padding="12dp"
+                        android:background="@drawable/input_background"
+                        android:layout_marginStart="6dp"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etCardName"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Tên trên thẻ"
+                    android:textSize="16sp"
+                    android:padding="12dp"
+                    android:background="@drawable/input_background"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Place Order Button -->
+        <Button
+            android:id="@+id/btnPlaceOrder"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Place Order"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:background="@drawable/button_background"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Security Notice -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔒 Your payment information is secure and encrypted"
+            android:textSize="12sp"
+            android:textColor="#6B7280"
+            android:gravity="center"
+            android:padding="16dp"/>
+
+    </LinearLayout>
+</ScrollView>

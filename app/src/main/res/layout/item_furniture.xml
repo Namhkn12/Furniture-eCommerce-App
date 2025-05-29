@@ -1,0 +1,61 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <!-- Product Image -->
+        <ImageView
+            android:id="@+id/product_image"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@android:color/darker_gray"
+            android:contentDescription="Product Image" />
+
+<!--        &lt;!&ndash; Favorite Icon &ndash;&gt;-->
+<!--        <ImageButton-->
+<!--            android:id="@+id/favorite_button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="6dp"-->
+<!--            android:padding="3dp"-->
+<!--            android:layout_alignEnd="@id/product_image"-->
+<!--            android:background="@drawable/bg_circle_light"-->
+<!--            android:contentDescription="Favorite"-->
+<!--            android:src="@drawable/ic_favorite_outline" />-->
+
+        <!-- Product Name -->
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_image"
+            android:layout_marginTop="8dp"
+            android:text="Sverom chair"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#666666" />
+
+        <!-- Product Price -->
+        <TextView
+            android:id="@+id/product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_name"
+            android:layout_marginTop="4dp"
+            android:text="$400"
+            android:textColor="#FF8C00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

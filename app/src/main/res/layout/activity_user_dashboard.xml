@@ -123,41 +123,16 @@
             android:textStyle="bold"
             android:textSize="15sp"/>
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvOrderHistory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:text="Lịch sử đặt hàng"
+            app:drawableRightCompat="@drawable/ic_arrow_forward_24"
+            android:paddingHorizontal="25dp"
+            android:background="?attr/selectableItemBackground"/>
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/user_dashboard_pendingOrder"
-                android:textAlignment="center"
-                app:drawableTopCompat="@drawable/ic_shipping_24px"
-                android:background="?attr/selectableItemBackground"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/user_dashboard_onRouteOrder"
-                android:textAlignment="center"
-                app:drawableTopCompat="@drawable/ic_package_24px"
-                android:background="?attr/selectableItemBackground"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/user_dashboard_historyOrder"
-                android:textAlignment="center"
-                app:drawableTopCompat="@drawable/ic_history_24px"
-                android:background="?attr/selectableItemBackground"/>
-
-        </LinearLayout>
 
     </LinearLayout>
 
@@ -235,56 +210,18 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         />
-<!--    Setting Section-->
-    <LinearLayout
-        android:layout_width="match_parent"
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:orientation="vertical"
+        android:background="#FFFFFF"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/bottom_nav_color_selector"
+        app:itemTextColor="@color/bottom_nav_color_selector"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_dashboard_separator3">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/user_dashboard_settingTitle"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/user_dashboard_languageSettingText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/user_dashboard_languageSetting"
-                app:drawableRightCompat="@drawable/ic_arrow_forward_24"
-                android:paddingHorizontal="25dp"/>
-
-            <include
-                android:id="@+id/user_dashboard_smallSeparator2"
-                layout="@layout/common_small_separator_bar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                app:layout_constraintTop_toBottomOf="@id/user_dashboard_languageSettingText"
-                />
-
-            <TextView
-                android:id="@+id/user_dashboard_notificationSettingText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/user_dashboard_notificationSetting"
-                app:drawableRightCompat="@drawable/ic_arrow_forward_24"
-                android:paddingHorizontal="25dp"/>
-
-        </LinearLayout>
-    </LinearLayout>
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,9 +16,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.ndroid.ecommerce.MyApplication;
 import com.ndroid.ecommerce.R;
 import com.ndroid.ecommerce.databinding.ActivityLoginBinding;
-import com.ndroid.ecommerce.ui.UserDashboardActivity;
+import com.ndroid.ecommerce.ui.product.HomeActivity;
 import com.ndroid.ecommerce.util.LoadingDialog;
 import com.ndroid.ecommerce.util.StringUtil;
 
@@ -182,9 +183,12 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        Intent intent = new Intent(this, UserDashboardActivity.class);
-        intent.putExtra("user_info", userInfo);
-        intent.putExtra("username", username);
+        Intent intent = new Intent(this, HomeActivity.class);
+//        intent.putExtra("user_info", userInfo);
+//        intent.putExtra("username", username);
+        MyApplication myApplication = (MyApplication) getApplication();
+        myApplication.setUserInfo(userInfo);
+        myApplication.setUsername(username);
         startActivity(intent);
         finish();
     }

@@ -20,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class UserApiClient {
-    public static final String USER_ENDPOINT_URL = "http://221.132.0.181:25501/api/";
+    public static final String USER_ENDPOINT_URL = "http://14.189.204.107:25501/api/";
 //    public static final String USER_ENDPOINT_URL = "http://192.168.0.135:8080/api/";
     private static final Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new LocalDateAdapter()).setStrictness(Strictness.LENIENT).create();
     private static Retrofit userRetrofit;

@@ -11,8 +11,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.ndroid.ecommerce.MyApplication;
 import com.ndroid.ecommerce.databinding.ActivityEmailVerificationBinding;
-import com.ndroid.ecommerce.ui.UserDashboardActivity;
+import com.ndroid.ecommerce.ui.product.HomeActivity;
 import com.ndroid.ecommerce.util.LoadingDialog;
 
 import api.user.UserApiClient;
@@ -128,9 +129,12 @@ public class EmailVerificationActivity extends AppCompatActivity {
             public void onResponse(Call<String> call, Response<String> response) {
                 loadingDialog.hide();
                 if (response.isSuccessful()) {
-                    Intent intent = new Intent(EmailVerificationActivity.this, UserDashboardActivity.class);
-                    intent.putExtra("user_info", userInfo);
-                    intent.putExtra("username", username);
+                    Intent intent = new Intent(EmailVerificationActivity.this, HomeActivity.class);
+//                    intent.putExtra("user_info", userInfo);
+//                    intent.putExtra("username", username);
+                    MyApplication myApplication = (MyApplication) getApplication();
+                    myApplication.setUserInfo(userInfo);
+                    myApplication.setUsername(username);
                     startActivity(intent);
                     finish();
                 } else Toast.makeText( EmailVerificationActivity.this,"Co loi: "+response.code(), LENGTH_SHORT).show();
