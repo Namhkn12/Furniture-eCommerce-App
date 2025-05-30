@@ -19,8 +19,8 @@ Thư viện sử dụng: (gradle)
 ```
 minSDK: 26
 
-UserService: [https://github.com/Namhkn12/android_user_service]
-CartOrderService: [https://github.com/viethoang2307/CartOrderService]
-RatingService: [https://github.com/Namhkn12/Furniture-eCommerce-App/tree/hieu/RatingService]
-ProductService: [https://github.com/spleeter1/AndroidProductService]
-ChatbotService: [https://github.com/quang2719/Phat-trien-Android-App/tree/main/eComProject/ChatbotServices]
+- UserService: [https://github.com/Namhkn12/android_user_service]
+- CartOrderService: [https://github.com/viethoang2307/CartOrderService]
+- RatingService: [https://github.com/Namhkn12/Furniture-eCommerce-App/tree/hieu/RatingService]
+- ProductService: [https://github.com/spleeter1/AndroidProductService]
+- ChatbotService: [https://github.com/quang2719/Phat-trien-Android-App/tree/main/eComProject/ChatbotServices]
