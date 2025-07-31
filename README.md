@@ -8,6 +8,13 @@ PTIT Android App 2025
 - Phùng Minh Hiếu: Đánh giá sản phẩm
 - Nguyễn Viết Quang: Chatbot trợ lí ảo
 
+## Chức năng chính:
+- Đăng nhập, đăng kí có xác thực qua mail, sửa thông tin người dùng, thông tin đăng nhập
+- Xem danh sách sản phẩm, tìm kiếm sản phẩm, lọc sản phẩm theo loại, giá,...
+- Tạo đơn hàng và đặt hàng, xem lịch sử đặt hàng
+- Đánh giá, bình luận sản phẩm kèm ảnh
+- Chatbot hỗ trợ mua hàng
+
 Thư viện sử dụng: (gradle)
 ```
     implementation ("de.hdodenhof:circleimageview:3.1.0")
